@@ -1,3 +1,9 @@
 object-detection/src/media/video/1.mp4
 object-detection/src/media/video/2.mp4
 object-detection/src/media/video/3.mp4
+.vscode
+.pylintrc
+.gitignore
+object-detection/src/video/1.mp4
+object-detection/src/video/2.mp4
+object-detection/src/video/3.mp4
