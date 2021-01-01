@@ -1,7 +1,7 @@
 <annotation>
 	<folder>train</folder>
 	<filename>frame_1.mp4_900.jpg</filename>
-	<path>/home/kora/Documents/RI/MATF-RI/object-detection/src/data/train/frame_1.mp4_900.jpg</path>
+	<path>/home/kora/Documents/RI/MATF-RI/object-detection/src/images/train/frame_1.mp4_900.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -163,8 +163,8 @@
 		<bndbox>
 			<xmin>485</xmin>
 			<ymin>303</ymin>
-			<xmax>628</xmax>
-			<ymax>373</ymax>
+			<xmax>629</xmax>
+			<ymax>387</ymax>
 		</bndbox>
 	</object>
 </annotation>

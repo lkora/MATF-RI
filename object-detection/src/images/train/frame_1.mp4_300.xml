@@ -1,7 +1,7 @@
 <annotation>
 	<folder>train</folder>
 	<filename>frame_1.mp4_300.jpg</filename>
-	<path>/home/kora/Documents/RI/MATF-RI/object-detection/src/data/train/frame_1.mp4_300.jpg</path>
+	<path>/home/kora/Documents/RI/MATF-RI/object-detection/src/images/train/frame_1.mp4_300.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,7 +12,7 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>van</name>
+		<name>car</name>
 		<pose>Unspecified</pose>
 		<truncated>1</truncated>
 		<difficult>0</difficult>
