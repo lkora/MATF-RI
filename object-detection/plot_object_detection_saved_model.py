@@ -35,7 +35,7 @@ warnings.filterwarnings('ignore')   # Suppress Matplotlib warnings
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'    # Suppress TensorFlow logging (1)
 tf.get_logger().setLevel('ERROR')           # Suppress TensorFlow logging (2)
 
-SAMPLING = 15  # Classify every n frames (use tracking in between)
+SAMPLING = 10  # Classify every n frames (use tracking in between)
 CONFIDENCE = 0.80  # Confidence threshold to filter iffy objects
 
 # def download_images():
@@ -184,13 +184,13 @@ def make_image_paths():
 
 IMAGE_PATHS = make_image_paths()
 # PATH_TO_MODEL_DIR = "/home/kora/Documents/RI/MATF-RI/object-detection/exported_models/my_model_1"
-PATH_TO_MODEL_DIR = "/home/kora/Documents/RI/object-detection/pre_training_models/ssd_mobilenet_v2_fpnlite_640x640"
+PATH_TO_MODEL_DIR = "/home/kora/Documents/RI/MATF-RI/object-detection/exported_models/my_model_2_SSD"
 PATH_TO_LABELS = "/home/kora/Documents/RI/MATF-RI/object-detection/annotations/label_map.pbtxt"
 PATH_TO_SAVED_MODEL = PATH_TO_MODEL_DIR + "/saved_model"
 
 
 # cap = cv2.VideoCapture(0) # or cap = cv2.VideoCapture("<video-path>")
-cap = cv2.VideoCapture("/home/kora/Documents/RI/object-detection/src/video/1.mp4")
+cap = cv2.VideoCapture("/home/kora/Documents/RI/object-detection/src/video/2.mp4")
 fourcc = cv2.VideoWriter_fourcc(*'MJPG')
 
 def load_model(model_path):
