@@ -20,12 +20,6 @@ Those integers in order represent:
 
 When vehicles exit press the "end" button and exit. End button saves the statistics of the simulation into results.txt file.
 
-# Screenshots:
-
-### _When the model starts up_
-
-![On Start](https://github.com/lkora/MATF-RI/blob/master/model/screenshots/Screenshot_1.png)
-
 ### _Upon pressing load_
 
 ![When running](https://github.com/lkora/MATF-RI/blob/master/model/screenshots/Screenshot_2.png)
