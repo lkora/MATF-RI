@@ -18,4 +18,8 @@ Those integers in order represent:
 - Seconds to change the west and east traffic light 
 - Seconds to change the NS traffic light
 
-When vehicles exit press the "end" button and exit. End button saves the statistics of the simulation into resutls.txt file.
+When vehicles exit press the "end" button and exit. End button saves the statistics of the simulation into results.txt file.
+
+### _Upon pressing load_
+
+![When running](https://github.com/lkora/MATF-RI/blob/master/model/screenshots/Screenshot_2.png)
