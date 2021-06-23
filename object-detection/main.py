@@ -41,16 +41,16 @@ def var_init():
     # Add different arguments
     parser.add_argument(
         "--model-path", "-mp", required=True,
-        help="Absolute path to the model.", type=str)
+        help="Path to the model.", type=str)
     parser.add_argument(
         "--label-path", "-lp", required=True,
-        help="Absolute path to the labels.\t ./*.pbtxt", type=str)
+        help="Path to the labels.\t ./*.pbtxt", type=str)
     parser.add_argument(
         "--source-video-path", "-sp", required=True,
-        help="Absolute path to the video source.", type=str)
+        help="Path to the video source.", type=str)
     parser.add_argument(
         "--output-video-path", "-op", required=False,
-        help="Absolute path to the video output with all the labels.", type=str)
+        help="Path to the video output with all the labels.", type=str)
     parser.add_argument(
         "--sampling-rate", "-sr", required=False,
         help="Frame processing rate, could be set lower on faster GPUs. Default value: " + str(SAMPLING), type=int)
@@ -68,7 +68,7 @@ def var_init():
     RESOLUTION["width"] = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     RESOLUTION["height"] = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     global PATH_TO_MODEL_DIR, PATH_TO_LABELS
-    PATH_TO_MODEL_DIR = args.model_path + "/saved_model"
+    PATH_TO_MODEL_DIR = args.model_path
     PATH_TO_LABELS = args.label_path
     if not args.sampling_rate == None:
         if args.sampling_rate < 0:
@@ -173,7 +173,7 @@ def run_inference(cap, model, category_index):
                     break
 
             # Prints elapsed time and number of cars in frame
-            print('Iteration took {} seconds. Number of cars in frame: {}'.format('%.3f'%(elapsed_time), num_of_cars))
+            print('Iteration took {} seconds. Number of vehicles in frame: {}'.format('%.3f'%(elapsed_time), num_of_cars))
         
             # Displays the FPS and frame time on the video
             font                   = cv2.FONT_HERSHEY_SIMPLEX
