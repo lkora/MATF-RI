@@ -2,3 +2,5 @@ object-detection/src/video/1.mp4
 object-detection/src/video/2.mp4
 object-detection/src/video/3.mp4
 object-detection/output.mp4
+object-detection/exported_models/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8_retrained/checkpoint/ckpt-0.data-00000-of-00001
+object-detection/exported_models/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8_retrained/saved_model/variables/variables.data-00000-of-00001

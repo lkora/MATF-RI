@@ -22,10 +22,6 @@ SAMPLING = 10  # Classify every n frames (use tracking in between)
 CONFIDENCE = 0.65  # Confidence threshold to filter iffy objects
 
 
-# PATH_TO_MODEL_DIR = "/home/kora/Documents/RI/MATF-RI/object-detection/exported_models/ssd_mobilenet_v2_fpnlite_640x640_retrained/"
-# PATH_TO_LABELS = "/home/kora/Documents/RI/MATF-RI/object-detection/annotations/label_map.pbtxt"
-# cap = cv2.VideoCapture("/home/kora/Documents/RI/object-detection/src/video/1.mp4")
-
 PATH_TO_MODEL_DIR = ""
 PATH_TO_LABELS = ""
 cap = None
@@ -33,6 +29,8 @@ RESOLUTION = {
     "width": 0,
     "height": 0,
 }
+
+data = {}
 
 def var_init():
     global SAMPLING, CONFIDENCE, cap
@@ -129,7 +127,7 @@ def run_inference_for_single_image(model, image):
 
 
 
-def run_inference(cap, model, category_index):
+def run_inference(cap, model, category_index, intersection_index):
     # Makes a recording
     # Open output video file
     out = cv2.VideoWriter('output.mp4', cv2.VideoWriter_fourcc(*'MJPG'), 5, (RESOLUTION["width"], RESOLUTION["height"]))
@@ -174,6 +172,12 @@ def run_inference(cap, model, category_index):
 
             # Prints elapsed time and number of cars in frame
             print('Iteration took {} seconds. Number of vehicles in frame: {}'.format('%.3f'%(elapsed_time), num_of_cars))
+            # Dump to json
+            data['intersection_' + str(intersection_index)] = {
+                'num_of_cars': num_of_cars,
+            }
+            with open('data.json', 'w', encoding='utf-8') as file:
+                json.dump(data, file, ensure_ascii=False, indent=4)
         
             # Displays the FPS and frame time on the video
             font                   = cv2.FONT_HERSHEY_SIMPLEX
@@ -212,7 +216,7 @@ def main():
     category_index = label_map_util.create_category_index_from_labelmap(PATH_TO_LABELS, use_display_name=True)
 
     # Run program
-    run_inference(cap, detection_model, category_index) # capture, model, map with classes and ids
+    run_inference(cap, detection_model, category_index, 0) # capture, model, map with classes and ids
 
 if __name__ == '__main__':
     main()
